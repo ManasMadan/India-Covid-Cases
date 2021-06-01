@@ -1,0 +1,147 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#container{
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    height: 100vh;
+}
+
+#map_container{
+    background-color: yellow;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 39vw;
+}
+
+#instruction{
+    font-style: italic;
+    display: none;
+}
+
+
+.hide{
+    display: none;
+}
+#spinner{
+    width: 70vw;
+    text-align: center;
+}
+
+#cardContainer{
+    display: none;
+}
+
+
+#spinner i{
+    color: white;
+    animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin{
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+#card{
+    background-color: red;
+    height: 100vh;
+    width: 70vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}   
+
+.info{
+    margin-top: 10em;
+    width: 70vw;
+    text-align:right;
+    padding-right: 0.5em;
+    color: white;
+    font-style: italic;
+}
+
+#selected{
+    color: white;
+    font-weight: bolder;
+}
+
+#state_name{
+    display: flex;
+    flex-direction: row;
+}
+
+#state_name i{
+    align-self: center;
+    margin-left: 2em;
+    color: #fff;
+    cursor: pointer;
+}
+
+.number{
+    display: grid;
+    grid-template-columns: 20fr 1fr;
+}
+
+.number button i{
+    align-self: center;
+    background: #fff;
+    
+}
+.number button{
+    align-self: center;
+    background: #fff;
+    border: none;
+}
+
+@media (max-width:1000px){
+    #container{
+        flex-direction: column;
+        width: 100vw;
+        height: 200vh;
+    }
+    #map_container{
+        width: 100vw;
+    }
+    #card{
+        width: 100vw;
+    }
+    #instruction{
+        display: block;
+    }
+}
+
+@media (min-width:1000px) and (max-width : 1200px){
+    #container{
+        flex-direction: column;
+        width: 100vw;
+        height: 200vh;
+    }
+    #map_container{
+        width: 100vw;
+    }
+    .info{
+        position: relative;
+        bottom: 100px;
+    }
+    #map{
+        width: 40vw;
+    }
+    #selected{
+        color:black;
+    }
+    #card{
+        width: 100vw;
+    }
+    #instruction{
+        display: block;
+    }
+}

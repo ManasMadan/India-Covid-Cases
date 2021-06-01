@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <meta http-equiv="ScreenOrientation" content="autoRotate:disabled">
+  <title>Covid Cases</title>
+  <script src="map/mapdata.js"></script>
+  <script src="map/countrymap.js"></script>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+  <link rel="stylesheet" href="index.css">
+  <link rel="icon" href="icon.jpg" type = "image/x-icon">
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="map_container">
+      <div id="map"></div>
+      <h4 id="instruction">"Tap On A State to see Covid Stats"</h4>
+    </div>
+    <div id="card">
+      <div id="spinner">
+        <i class="fas fa-circle-notch fa-7x"></i>
+      </div>
+      <div id="cardContainer">
+        <div class="grey-bg container-fluid">
+          <section id="stats-subtitle">
+            <div id="state_name">
+              <h2 id="selected">India</h2>
+              <i class="fas fa-times fa-2x" id="cross" onclick="{fetchData()}"></i>
+            </div>
+            <div class="row">
+              <div class="col-xl-6 col-md-12">
+                <div class="card overflow-hidden">
+                  <div class="card-content">
+                    <div class="card-body cleartfix">
+                      <div class="media align-items-stretch">
+                        <div class="align-self-center">
+                          <i class="icon-pencil primary font-large-2 mr-2"></i>
+                        </div>
+                        <div class="media-body">
+                          <h4>Total Cases</h4>
+                        </div>
+                        <div class="align-self-center number">
+                          <h1 id="total_cases"></h1>
+                          <button onclick="speak(total)" id="btn1"><i class="fas fa-volume-up fa-2x"></i></button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-xl-6 col-md-12">
+                <div class="card">
+                  <div class="card-content">
+                    <div class="card-body cleartfix">
+                      <div class="media align-items-stretch">
+                        <div class="align-self-center">
+                          <i class="icon-speech warning font-large-2 mr-2"></i>
+                        </div>
+                        <div class="media-body">
+                          <h4>Active Cases</h4>
+                        </div>
+                        <div class="align-self-center number">
+                          <h1 id="active_cases"></h1>
+                          <button onclick="speak(active)" id="btn2"><i class="fas fa-volume-up fa-2x"></i></button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xl-6 col-md-12">
+                <div class="card">
+                  <div class="card-content">
+                    <div class="card-body cleartfix">
+                      <div class="media align-items-stretch">
+                        <div class="media-body">
+                          <h4>Recovered</h4>
+                        </div>
+                        <div class="align-self-center number">
+                          <h1 id="recovered_cases"></h1>
+                          <button onclick="speak(recovered)" id="btn3"><i class="fas fa-volume-up fa-2x"></i></button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-xl-6 col-md-12">
+                <div class="card">
+                  <div class="card-content">
+                    <div class="card-body cleartfix">
+                      <div class="media align-items-stretch">
+                        <div class="media-body">
+                          <h4>Deaths</h4>
+                        </div>
+                        <div class="align-self-center number">
+                          <h1 id="deaths"></h1>
+                          <button onclick="speak(deaths)" id="btn4"><i class="fas fa-volume-up fa-2x"></i></button>
+                        </div>
+                        <div class="align-self-center">
+                          <i class="icon-wallet success font-large-2"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+      </div>
+
+      <div class="info">
+        <h3>Source : <a style="text-decoration: none;color: white;" target="_blank"
+            href="https://www.mohfw.gov.in">www.mohfw.gov.in</a></h3>
+        <h5 id="updated"></h5>
+        <h5>Made By:
+          Manas Madan
+        </h5>
+      </div>
+    </div>
+  </div>
+</body>
+
+<!-- Bootstrap Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+<script src="index.js"></script>
+<script src="https://kit.fontawesome.com/990e3017d4.js" crossorigin="anonymous"></script>
+
+</html>
